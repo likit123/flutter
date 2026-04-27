@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:my_app3/main_menu.dart';
 
 class Firstscreen extends StatefulWidget {
   const Firstscreen({super.key});
@@ -73,7 +74,8 @@ class _FirstscreenState extends State<Firstscreen> {
 
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (_) => const SecondPage()),
+      MaterialPageRoute(builder: (_) => const Main_Menu()),
+      // MaterialPageRoute(builder: (_) => const SecondPage()),
     );
   }
 
@@ -124,7 +126,10 @@ class _FirstscreenState extends State<Firstscreen> {
           content: Text(message),
           actions: [
             TextButton(
-              child: const Text('OK'),
+              style: TextButton.styleFrom(
+                backgroundColor: const Color.fromARGB(241, 253, 201, 201),
+              ),
+              child: const Text('OK', style: TextStyle(color: Colors.black,)),
               onPressed: () {
                 SystemNavigator.pop();
               },
@@ -136,19 +141,19 @@ class _FirstscreenState extends State<Firstscreen> {
   }
 }
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+// class SecondPage extends StatelessWidget {
+//   const SecondPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Second Page')),
-      body: const Center(
-        child: Text(
-          'Second Page 2',
-          style: TextStyle(fontSize: 24, color: Colors.blue),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('Second Page')),
+//       body: const Center(
+//         child: Text(
+//           'Second Page 2',
+//           style: TextStyle(fontSize: 24, color: Colors.blue),
+//         ),
+//       ),
+//     );
+//   }
+// }
