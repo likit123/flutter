@@ -1,0 +1,46 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub/
+build/
+
+# Generated files
+*.log
+*.tmp
+*.swp
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Android
+android/.gradle/
+android/local.properties
+android/app/build/
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# MacOS
+macos/Flutter/Flutter.framework
+
+# Windows
+windows/flutter/ephemeral/
+
+# Linux
+linux/flutter/ephemeral/
+
+# Web
+build/web/
+
+# Firebase (ถ้ามี)
+google-services.json
+GoogleService-Info.plist
+
+# Misc
+.DS_Store
+Thumbs.db
