@@ -33,20 +33,28 @@ class _Main_MenuState extends State<Main_Menu> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_selectedIndex],
-
-      bottomNavigationBar: CrystalNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 222, 241, 250),
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-
-        items: [
-          CrystalNavigationBarItem(icon: Icons.home,),
-          CrystalNavigationBarItem(icon: Icons.security_outlined, ),
-          CrystalNavigationBarItem(icon: Icons.access_alarm_sharp,),
-          CrystalNavigationBarItem(icon: Icons.star,),
-        ],
+    return PopScope(
+      canPop: _selectedIndex == 0,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop && _selectedIndex != 0) {
+          setState(() {
+            _selectedIndex = 0; // กลับหน้าแรก
+          });
+        }
+      },
+      child: Scaffold(
+        body: _pages[_selectedIndex],
+        bottomNavigationBar: CrystalNavigationBar(
+          backgroundColor: const Color.fromARGB(255, 222, 241, 250),
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          items: [
+            CrystalNavigationBarItem(icon: Icons.home),
+            CrystalNavigationBarItem(icon: Icons.security_outlined),
+            CrystalNavigationBarItem(icon: Icons.access_alarm_sharp),
+            CrystalNavigationBarItem(icon: Icons.star),
+          ],
+        ),
       ),
     );
   }
